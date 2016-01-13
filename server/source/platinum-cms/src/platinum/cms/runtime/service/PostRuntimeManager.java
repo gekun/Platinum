@@ -4,7 +4,9 @@ import java.util.List;
 
 import platinum.cms.common.PostStatus;
 import platinum.cms.common.dao.PostDAO;
+import platinum.cms.common.dao.CallBackDao;
 import platinum.cms.common.entity.PostEntity;
+import platinum.cms.common.entity.CallBackEntity;
 import platinum.framework.dao.DAOQuery;
 
 public class PostRuntimeManager
@@ -24,8 +26,17 @@ public class PostRuntimeManager
 		return _instance;
 	}
 	
+	private CallBackDao _callbackDao = null;
+	public CallBackDao getCallBackDao()
+	{
+		if (_callbackDao == null)
+		{
+			_callbackDao = new CallBackDao();
+		}
+		return _callbackDao;
+	}
 	private PostDAO _postDAO = null;
-	private PostDAO getPostDAO()
+	public PostDAO getPostDAO()
 	{
 		if (_postDAO == null)
 		{
@@ -34,11 +45,15 @@ public class PostRuntimeManager
 		return _postDAO;
 	}
 	
+	public PostEntity getPost(String p_id)
+	{
+		PostEntity post = getPostDAO().selectById(p_id);
+		return post;
+	}
 	
 	public PostEntity getPost(String p_id, String p_categoryId)
 	{
-		PostEntity post = getPostDAO().selectById(p_id);
-		if (post == null) return null;
+		PostEntity post = getPost(p_id);
 		
 		String categoryId = post.getCategoryId();
 		if (!categoryId.equals(p_categoryId))
@@ -52,7 +67,7 @@ public class PostRuntimeManager
 	
 
 	
-	public List<PostEntity> loadLatestPostByCategory(String p_categoryId, boolean p_hasPhoto, String p_extra, int p_count)
+	public List<PostEntity> loadLatestPostsByCategory(String p_categoryId, boolean p_hasPhoto, String p_extra, int p_count)
 	{
 		DAOQuery query = _createQuery("categoryId=:categoryId", p_hasPhoto, p_extra);
 		if (p_count != Integer.MAX_VALUE)
@@ -63,8 +78,16 @@ public class PostRuntimeManager
 		List<PostEntity> result = getPostDAO().select(query);
 		return result;
 	}
-	public List<PostEntity> loadLatestPostByCategory(String p_categoryId, boolean p_hasPhoto, String p_extra, int p_pageIndex, int p_pageSize)
+	public List<PostEntity> loadLatestPostsByCategory(String p_categoryId, boolean p_hasPhoto, String p_extra, int p_pageIndex, int p_pageSize)
 	{
+		if (p_pageIndex < 0)
+		{
+			p_pageIndex = 0;
+		}
+		if (p_pageSize < 0)
+		{
+			p_pageSize = 0;
+		}
 		DAOQuery query = _createQuery("categoryId=:categoryId", p_hasPhoto, p_extra);
 		query.setPageIndex(p_pageIndex);
 		query.setPageSize(p_pageSize);
@@ -77,8 +100,23 @@ public class PostRuntimeManager
 	
 	
 	
+	public List<PostEntity> loadTopPostsByCategory(String p_categoryId, int p_count)
+	{
+		DAOQuery query = new DAOQuery("categoryId=:categoryId");
+		query.setParameter("categoryId", p_categoryId);
+		query.setOrderByClause("views.count desc, createTime desc");
+		query.setPageSize(p_count);
+		query.setCacheRegion("twelveHoursCache");
+		List<PostEntity> result = getPostDAO().select(query);
+		return result;
+	}
 	
-	public List<PostEntity> loadLatestPostBySubcategory(String p_subcategoryId, boolean p_hasPhoto, String p_extra, int p_count)
+	
+	
+	
+	
+	
+	public List<PostEntity> loadLatestPostsBySubcategory(String p_subcategoryId, boolean p_hasPhoto, String p_extra, int p_count)
 	{
 		DAOQuery query = _createQuery("subcategory_id=:subcategoryId", p_hasPhoto, p_extra);
 		if (p_count != Integer.MAX_VALUE)
@@ -89,9 +127,19 @@ public class PostRuntimeManager
 		List<PostEntity> result = getPostDAO().select(query);
 		return result;
 	}
-	public List<PostEntity> loadLatestPostBySubcategory(String p_subcategoryId, boolean p_hasPhoto, String p_extra, int p_pageIndex, int p_pageSize)
+	public List<PostEntity> loadLatestPostsBySubcategory(String p_subcategoryId, boolean p_hasPhoto, String p_extra, int p_pageIndex, int p_pageSize)
 	{
+		if (p_pageIndex < 0)
+		{
+			p_pageIndex = 0;
+		}
+		if (p_pageSize < 0)
+		{
+			p_pageSize = 0;
+		}
+		
 		DAOQuery query = _createQuery("subcategory_id=:subcategoryId", p_hasPhoto, p_extra);
+		query.setCachable(true);
 		query.setPageIndex(p_pageIndex);
 		query.setPageSize(p_pageSize);
 		query.setParameter("subcategoryId", p_subcategoryId);
@@ -114,8 +162,28 @@ public class PostRuntimeManager
 				(p_extra != null ? (" " + p_extra + " and ") : "") +
 				p_whereClause
 		);
+		query.setCacheRegion("threeMinutesCache");
 		query.setOrderByClause("createTime desc");
 		query.setParameter("postStatus", PostStatus.PUBLISHED);
 		return query;
+	}
+
+
+	public int hitPost(String p_postId)
+	{
+		PostDAO dao = getPostDAO();
+		PostEntity post = dao.selectById(p_postId);
+		if (post != null)
+		{
+			//dao.beginTransaction();
+			post.setViewCount(post.getViewCount() + 1);
+			dao.updatePostViews(post.getViews());
+			//dao.commitTransaction();
+			return post.getViewCount();
+		}
+		else
+		{
+			return 0;
+		}
 	}
 }

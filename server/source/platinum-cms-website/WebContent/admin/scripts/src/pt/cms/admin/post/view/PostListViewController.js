@@ -8,16 +8,16 @@ pt.cms.admin.post.view.PostListViewController = function()
 {
     var me = $extend(mx.view.ListViewController);
     var base = {};
-    
+   
     me.toolbar = null;
     
     me.restClient = null;
     me.loading = false;
-    
+   
     me.pageIndex = 0;
     me.pageCount = 1000;
     me.pageSize = 20;
-    
+   
     me.$searchBar = null;
     
     var _$keywords = null;
@@ -106,6 +106,7 @@ pt.cms.admin.post.view.PostListViewController = function()
         };
         
         me.loading = true;
+       
         me.restClient.GET("admin/post/", { pageIndex: ++me.pageIndex, pageSize: me.pageSize })
             .success(function(p_result){
                 me.loading = false;
@@ -169,9 +170,11 @@ pt.cms.admin.post.view.PostListViewController = function()
         $pageController.rootViewController.editPost({
             id: null,
             title: "在这里修改标题",
+            postType: 1,
             postStatus: 0,
             summary: "在这里添加摘要（120字以内）",
-            contentText: "在这里添加正文"
+            contentText: "在这里添加正文(建议字体大小为五号或小四)",
+            attachments: []
         });
     };
     

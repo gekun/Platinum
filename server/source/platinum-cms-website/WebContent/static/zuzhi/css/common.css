@@ -1,0 +1,573 @@
+﻿@CHARSET "UTF-8";
+
+html
+{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y:auto; 
+}
+
+body
+{
+	padding: 0;
+	margin: 0;
+	background: #eee;
+	margin: 0;
+	overflow-y:hidden;
+}
+
+#headcontainer
+{
+	padding: 0;
+	margin: 0;
+	padding-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 140px;
+	width: 990px;
+	background: #e60012;
+}
+
+#headcontainer #header1
+{
+	margin-left: auto;
+	margin-right: auto;
+	height: 100px;
+	width: 990px;
+	left: 0;
+	position: relative;
+}
+
+#header1 #indexAndsearch
+{
+	position: absolute;
+	margin-top: 15px;
+	height: 60px;
+	width: 200px;
+	right: 0;
+}
+
+
+#header1 #indexAndsearch a
+{
+	color:#ffffff;
+	text-decoration: none;
+	margin-left:9px;
+	margin-right:9px;
+}
+
+#header1 #indexAndsearch a:hover
+{
+	color: #ccc;
+}
+
+#header1 #indexAndsearch #searchbar
+{
+	width: 220px;
+	height: 22px;
+	margin-top: 5px;
+	background: url(/static/zuzhi/images/text.png);
+	background-repeat: no-repeat;
+}
+
+#header1 #collegelogo
+{
+	position: absolute;
+	left: 0;
+	top: 10px;
+}
+
+#header1 #secondlogo
+{
+	position: absolute;
+	left: 450px;
+	top: 10px;
+}
+
+.word {
+	width:120px;
+	height: 16px;
+	line-height: 16px;
+	padding: 0;
+	margin: 0;
+	float: left;
+	border: 0;
+	background-color: #FFFFFF;
+	color: #888787;
+	font-size: 10px;
+}
+
+.button {
+	float: left;
+	height: 22px;
+	width: 26px;
+	background: url(/static/zuzhi/images/button.png);
+	background-repeat: no-repeat;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+menu#nav
+{
+	width: 990px;
+	padding: 0;
+	margin:0;
+	margin-left: auto;
+	margin-right: auto;
+	display: bolock;
+	height:38px;
+}
+
+menu#nav ul#zuzhi
+{
+	border-top:1px solid #fff;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: left;
+	width:100%;
+}
+
+menu#nav ul#zuzhi li
+{
+	padding: 0;
+	margin: 0;
+	float: left;
+	width: 123.75px;
+	height: 36px;
+	line-height: 35px;
+	text-align: center;
+	/*background: url(/static/zuzhi/images/menu.gif) no-repeat;*/
+}
+
+menu#nav ul#zuzhi li a
+{
+	display: block;
+	color: #fff;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	text-decoration: none;
+	margin: 0;
+}
+
+menu#nav ul#zuzhi li a:hover
+{
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+	font-family: 微软雅黑;
+	text-decoration: none;
+	background: url(/static/zuzhi/images/hover.png) no-repeat;
+	background-position: bottom;
+	font-weight: bold;
+}
+
+#footer
+{
+	width:990px;
+	height: 51px;
+	background: url(/static/zuzhi/images/redbk.gif) repeat;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#footer_box
+{
+	width: 990px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	height: 150px;
+}
+
+#footer_box p
+{
+	font-weight: bold;
+}
+
+#deplink_1
+{
+	border-right: 1px solid white;
+	height: 110px;
+	margin:20px 0 5px 0;
+	top: 5px;
+	left: 50px;
+	position: absolute;
+	font-size: 12px;
+	color: #fff;
+}
+
+#deplink_1 a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#deplink_1 a:hover
+{
+	color: yellow;
+}
+
+#deplink_2 
+{
+	border-right: 1px solid white;
+	height: 110px;
+	margin: 20px 0 5px 0;
+	top: 5px;
+	left: 500px;
+	position: absolute;
+	font-size: 12px;
+	color: #fff;
+}
+
+#deplink_2 a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#deplink_2 a:hover
+{
+	color: yellow;
+}
+
+#system_link
+{
+	height: 110px;
+	margin: 20px 0 5px 0;
+	top: 5px;
+	left: 850px;
+	position: absolute;
+	font-size: 12px;
+	color: #fff;
+}
+
+#system_link a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#system_link a:hover
+{
+	color: yellow;
+}
+
+
+table
+{
+	margin:0;
+	paddiong: 0;
+}
+
+table td
+{
+	height: 25px;
+	margin-right: 30px;
+}
+
+table td a
+{
+	margin-right: 30px;	
+}
+
+#categoryNavigationBar
+{
+	padding: 0;
+    margin: 0;
+    display: block;
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+	border-bottom: 1px #ddd solid;
+	width: 990px;
+	color: #000;
+	font-weight: bold;
+}
+
+.CategoryNavigationBar li
+{
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: left;
+}
+
+#categoryNavigationBar li:first-child
+{
+	margin-left: 10px;
+	color: #000;
+}
+
+#categoryNavigationBar li a 
+{
+	color: #000;
+	text-decoration: none;
+}
+
+#categoryNavigationBar li a:hover
+{
+	color: yellow;
+}
+
+#bodyContent
+{
+	position: relative;
+	width: 990px;
+	margin-left: auto;
+	margin-right: auto;
+	background: white;
+}
+
+#content
+{
+	margin: 0 auto;
+	line-height: 20px;
+	width: 610px;
+	border: 1px dashed #BBB;
+	border-top: 1px dotted #BBB;
+}
+
+/*12-13*/
+#postList{width:990px;border-right:none;}
+#postList li
+{
+	padding-left: 15px;
+	width:950px;
+	line-height: 30px;
+	background-image:url(../images/list.gif);
+
+}
+#postList #pageNavigationBar 
+{
+	margin-top:15px;
+}
+#postDetail
+{
+	border:1px solid #ccc;
+}
+
+/*postlist省略号 与图标同行*/
+.PostList li #title
+{
+	width:540px;
+	display:inline;
+	overflow: hidden;/*表示溢出的内容会被隐藏*/
+	-o-text-overflow: ellipsis;    /* for Opera */
+	text-overflow: ellipsis;        /* for IE *//*当文本溢出时显示…此时还必须定义：强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden）*/
+	white-space: nowrap;/*表示文本不会换行*/
+}
+/*简介*/
+#postDetail #imageContent{float:left;margin-top:50px;}
+#postDetail #textContent{margin-top:50px;width:650px;float:right;padding:10px 0 0 0;}
+#textContent #content{width:650px;}
+
+#imageContent img
+{
+	margin: 5px 0 0 10px;
+	border: 1px solid #DDD;
+	box-shadow: gray 0px 3px 10px;
+	padding: 5px;
+	height: 200px;
+	width: 250px;
+}
+
+#textContent, #content
+{
+	margin:0px auto;
+}
+#content{margin-bottom:20px;}
+#textContent #title,#postDetail #title
+{
+	text-align: center;
+	font-size:19px;
+}
+#postDetail #title{margin-top:20px;}
+#textContent #info, #info
+{
+	text-align: center;
+	margin: 10px 0 10px 0;
+}
+#content img
+{
+	clear:both;
+	max-width:700px;
+	margin:5px 5px 5px 5px;
+}
+
+#bottom2
+{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	width: 990px;
+	height: 50px;
+	bottom: 0;
+	border-top: 1px #fff solid;
+	color: #fff;
+	left: 0;
+}
+
+
+#bottom2 p
+{
+	padding: 0;
+	margin: 0;
+	line-height: 15px;
+	float: left;
+	clear: both;
+}
+
+#bottom2 span a
+{
+	color: #fff;
+	text-decoration: none;
+}
+#bottom2 #copyright
+{
+	display: block;
+	position: absolute;
+	top: 12px;
+	left: 10px;
+	padding: 0;
+	height: 50px;
+}
+
+#copyright span
+{
+	float: left;
+}
+#copyright p
+{
+	padding: 0;
+	margin: 0;
+	line-height: 15px;
+	float: left;
+	clear: both;
+	margin-top:5px;
+}
+#bottom2 span a:hover
+{
+	color: #fdbc30;
+}
+
+#bottom2 #website
+{
+	position: absolute;
+	left: 350px;
+	top: 5px;
+	text-align: center;
+}
+
+#website a
+{
+	display: block;
+	text-decoration: none;
+	padding: 5px 0 4px 75px; 
+	color: #fff;
+}
+
+#website a:hover
+{
+	color: yellow;
+}
+
+
+#bottom2 #developer
+{
+	position: absolute;
+	right: 0;
+	width: 190px; 
+	margin: 0; 
+	padding: 0; 
+	display: bolck;
+	text-align: left;
+	color: #fff;
+}
+
+#developer ul
+{
+	margin: 10px 0 0 0;
+	padding: 0;	
+	float: left;
+}
+
+#developer li
+{
+	display: block;
+	height: 20px;
+	line-height: 12px;
+}
+
+#developer a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#developer a:hover
+{
+	color: yellow;
+}
+
+#developer span
+{
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+#categoryNavigationBar{width:690px;}
+#sideBar{margin-right:5px;}
+#title_style{padding-top:9px;}
+#postList{width:100%;}
+#more
+{
+	border-right: 1px solid #ccc;
+	margin-top: 10px;
+	width: 692px;
+	min-height: 650px;
+	height: 100%;
+	padding-right: 10px;
+	margin-left: 0;
+}
+#more .PostList li
+{
+	padding-left: 5px;
+	width: 680px;
+}
+a #title{width:560px;color:#000;overflow:hidden;}
+a #title:hover{color:#808080;}
+#categoryNavigationBar{width:700px;}
+#title_style span{position:absolute;top:8px;right:5px;}
+
+#content .MsoNormal{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+
+#content>div{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+
+#content{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+#content table{text-indent: 0;}
+#content table div{text-indent: 0;}

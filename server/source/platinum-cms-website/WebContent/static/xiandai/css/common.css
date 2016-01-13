@@ -1,0 +1,471 @@
+﻿@CHARSET "UTF-8";
+
+html
+{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y:auto; 	
+}
+
+body
+{
+	padding: 0;
+	margin: 0;
+	overflow-y: hidden;  
+}
+
+
+#headcontainer
+{
+	padding: 0;
+	margin: 0;
+	padding-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 140px;
+	width: 990px;
+	background-color:#0d5791;
+}
+
+#headcontainer #header1
+{
+	margin-left: auto;
+	margin-right: auto;
+	height: 100px;
+	width: 990px;
+	left: 0;
+	position: relative;
+}
+
+#header1 #indexAndsearch
+{
+	position: absolute;
+	margin-top: 15px;
+	height: 60px;
+	width: 200px;
+	right: 0;
+}
+
+
+#header1 #indexAndsearch a
+{
+	color:#ffffff;
+	text-decoration: none;
+	margin-left:9px;
+	margin-right:9px;
+}
+
+#header1 #indexAndsearch a:hover
+{
+	color: #ccc;
+}
+
+#header1 #indexAndsearch #searchbar
+{
+	width: 220px;
+	height: 22px;
+	margin-top: 5px;
+	background: url(/static/xiandai/image/searchbar.png);
+	background-repeat: no-repeat;
+}
+
+#header1 #collegelogo
+{
+	position: absolute;
+	left: 0;
+	top: 10px;
+}
+
+#header1 #secondlogo
+{
+	position: absolute;
+	left: 450px;
+	top: 10px;
+}
+
+.word {
+	width:120px;
+	height: 16px;
+	line-height: 16px;
+	padding: 0;
+	margin: 0;
+	float: left;
+	border: 0;
+	background-color: #FFFFFF;
+	color: #888787;
+	font-size: 10px;
+}
+
+.button {
+	float: left;
+	height: 22px;
+	width: 26px;
+	background: url(/static/xiandai/image/searchButton.png);
+	background-repeat: no-repeat;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+
+menu#mainmenu
+{
+	display: block;
+	width: 980px;
+	height: 32px;
+	list-style: none;
+	padding: 0;
+	margin:  0;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom:1px solid #fff;
+}
+
+menu#mainmenu li a
+{
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	color: #ffffff;
+	text-decoration: none;
+	text-align: center;
+	list-style: none;
+	font-size: 14px;
+}
+
+
+menu#mainmenu li a:hover
+{
+
+	color: #098ef6;
+	font-size: 15px;
+}
+
+.singleMenu
+{
+	float: left;
+	font-size: 15px;
+	font-family: 黑体;
+	display: inline-block;
+	height: 32px;
+	width: 163px;
+	padding: 0;
+	margin: 0;
+	background-color:#0d5791;
+}
+
+
+
+
+
+
+
+#footer
+{
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	height: 51px;
+	width: 990px;
+	background-color:#0d5791;
+	line-height: 23px;
+	font-size: 12px;
+	text-align:center;
+	position:relative;
+	text-decoration: none;
+
+}
+
+ #bottom1{
+	width: 990px;
+	height: 120px;
+	position: absolute;
+	left:0;
+	
+}
+
+#fastlink1, #fastlink2
+{
+	display: inline-block;
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	margin: 10px 0 0 50px;
+	text-decoration: none;
+}
+
+#fastlink1
+{
+	border-right: 1px solid #fff;
+	width:450px;
+	position: absolute;
+	left:0;
+}
+
+#fastlink2
+{
+	width:450px;
+	position: absolute;
+	right:0;
+}
+	
+.fastLink a
+{
+	font: 宋体;
+	font-size:12px;
+	font-weight: normal;
+	color: #FFF;
+}
+
+table td
+{
+	width:140px;
+	height: 20px;
+	text-decoration: none;
+	padding: 0;
+}
+
+.fastLink table td a
+{text-decoration: none;}
+
+.fastLink table td a:hover
+{
+	color: #098ef6;
+}
+
+#bottom2
+{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	width: 990px;
+	height: 50px;
+	bottom: 0;
+
+	border-top: 1px #fff solid;
+	color: #fff;
+	left: 0;
+}
+
+
+#bottom2 p
+{
+	padding: 0;
+	margin: 0;
+	line-height: 15px;
+	float: left;
+	clear: both;
+}
+
+#bottom2 span a
+{
+	color: #fff;
+	text-decoration: none;
+}
+#bottom2 #copyright
+{
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	padding: 0;
+	height: 50px;
+}
+
+#copyright span
+{
+	float: left;
+}
+
+#bottom2 span a:hover
+{
+	color: #098ef6;
+}
+
+#bottom2 #website
+{
+	position: absolute;
+	left: 385px;
+	top: 8px;
+	text-align: center;
+}
+
+#website a
+{
+	display: block;
+	text-decoration: none;
+	padding: 5px 0 4px 80px; 
+	color: #fff;
+}
+
+#website a:hover
+{
+	color: #098ef6;
+}
+
+
+#bottom2 #developer
+{
+	position: absolute;
+	right: 0;
+	width: 190px; 
+	margin: 0; 
+	padding: 0; 
+	display: bolck;
+	text-align: left;
+	color: #fff;
+}
+
+#developer ul
+{
+	margin: 10px 0 0 0;
+	padding: 0;	
+	float: left;
+}
+
+#developer li
+{
+	display: block;
+	height: 20px;
+	line-height: 12px;
+}
+
+#developer a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#developer a:hover
+{
+	color: #098ef6;
+}
+
+#developer span
+{
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+
+#categoryNavigationBar
+{
+	padding: 0;
+    margin: 0;
+    display: block;
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+	border-bottom: 1px #ddd solid;
+	width: 990px;
+	color: #000;
+	font-weight: bold;
+}
+
+#categoryNavigationBar li
+{
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: left;
+}
+
+#categoryNavigationBar li:first-child
+{
+	margin-left: 10px;
+	color: #000;
+}
+
+#categoryNavigationBar li a 
+{
+	color: #000;
+	text-decoration: none;
+}
+
+#categoryNavigationBar li a:hover
+{
+	color: #0d5791;
+}
+#more
+{
+	width:990px;
+	margin-left:auto;
+	margin-right:auto;
+	background-image: url(/static/xiandai/image/di.png);
+}
+#postList
+{
+
+
+}
+#postList li
+{
+	width:980px;
+	background:none;
+}
+#postList li a 
+{
+	width:980px;
+}
+
+#postDetail
+{
+	background-image: url(../image/di.png);
+	margin:0 auto;
+	width:990px;
+	padding-right:0;
+}
+#summary 
+{
+	text-align: center;
+}
+#content
+{
+	line-height: 20px;
+	width:940px;
+	padding:10px 20px 20px 20px;
+}
+#postList li #date{
+	right:30px;
+}
+#imageContent{display:none;}
+#textContent{
+	width:950px;
+	margin:0 auto;
+	padding:10px 20px 0 20px;
+}
+
+#postDetail h1{font-size:20px;margin-top:0;padding:0 100px;line-height:25px;}
+
+#content .MsoNormal{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+
+#content>div{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+
+#content{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+#content table{text-indent: 0;}
+#content table div{text-indent: 0;}

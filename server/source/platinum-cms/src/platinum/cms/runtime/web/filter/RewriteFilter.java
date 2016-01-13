@@ -18,7 +18,10 @@ public class RewriteFilter implements Filter
 	private static Pattern _postURLPattern = null;
 	private static Pattern _moreCategoryURLPattern = null;
 	private static Pattern _moreSubcategoryURLPattern = null;
-	
+	private static Pattern _mobmoreCategoryURLPattern = null;
+	private static Pattern _mobmoreSubcategoryURLPattern = null;
+	private static Pattern _mobpostURLPattern = null;
+	private static Pattern _viewCategoryURLPattern=null;
 	@Override
 	public void init(FilterConfig p_config) throws ServletException
 	{
@@ -28,6 +31,11 @@ public class RewriteFilter implements Filter
 			
 			_moreCategoryURLPattern = Pattern.compile("/([a-z]+)/more/([0-9]*)");
 			_moreSubcategoryURLPattern = Pattern.compile("/([a-z]+)/([A-Za-z0-9]{32})/more/([0-9]*)");
+			_mobmoreCategoryURLPattern = Pattern.compile("/([a-z]+)/([a-z]+)/more/([0-9]*)");
+			_mobmoreSubcategoryURLPattern = Pattern.compile("/([a-z]+)/([a-z]+)/([A-Za-z0-9]{32})/more/([0-9]*)");
+			_mobpostURLPattern = Pattern.compile("/([a-z]+)/([a-z]+)/([a-f0-9]{32}).html");
+			_viewCategoryURLPattern=Pattern.compile("/introduce/([0-9]*)");
+			
 		}
 	}
 	
@@ -43,12 +51,57 @@ public class RewriteFilter implements Filter
 		String uri = request.getRequestURI();
 		
 		Matcher matcher = null;
-		if ((matcher = _postURLPattern.matcher(uri)).find())
+		
+		
+		
+		if(uri.equals("/introduce/12345678be9e6b7a00002be9e6b7a0d.html"))
+		{ 
+		
+		
+			request.getRequestDispatcher("/introduce/view.jsp").forward(request, response);
+		}
+		
+		
+		
+
+	
+		
+		
+		else if(uri.equals("/introduce/12345679be9e6b7a00002be9e6b7a0d.html"))
+		{
+			request.getRequestDispatcher("/introduce/contact.jsp").forward(request, response);
+		}
+		else if(uri.equals("/service/92345678be9e6b7a00002be9e6b7a0d.html"))
+		{
+			request.getRequestDispatcher("/service/guide.jsp").forward(request, response);
+		}
+		else if ((matcher = _mobpostURLPattern.matcher(uri)).find())
+		{
+			String categoryId = matcher.group(2);
+			String postId = matcher.group(3);
+			
+			request.getRequestDispatcher("/mob/post.jsp?id=" + postId + "&categoryId=" + categoryId).forward(request, response);
+		}
+		
+		
+		
+		else if ((matcher = _postURLPattern.matcher(uri)).find())
 		{
 			String categoryId = matcher.group(1);
 			String postId = matcher.group(2);
 			
 			request.getRequestDispatcher("/post.jsp?id=" + postId + "&categoryId=" + categoryId).forward(request, response);
+		}
+		else if ((matcher = _mobmoreCategoryURLPattern.matcher(uri)).find())
+		{
+			String categoryId = matcher.group(2);
+			int pageIndex = 1;
+			try
+			{
+				pageIndex = Integer.parseInt(matcher.group(3));
+			}
+			catch (Exception e) {}
+			request.getRequestDispatcher("/mob/more.jsp?categoryId=" + categoryId + "&pageIndex=" + pageIndex).forward(request, response);
 		}
 		else if ((matcher = _moreCategoryURLPattern.matcher(uri)).find())
 		{
@@ -60,6 +113,19 @@ public class RewriteFilter implements Filter
 			}
 			catch (Exception e) {}
 			request.getRequestDispatcher("/more.jsp?categoryId=" + categoryId + "&pageIndex=" + pageIndex).forward(request, response);
+		}
+		
+		else if ((matcher = _mobmoreSubcategoryURLPattern.matcher(uri)).find())
+		{
+			String categoryId = matcher.group(2);
+			String subcategoryId = matcher.group(3);
+			int pageIndex = 1;
+			try
+			{
+				pageIndex = Integer.parseInt(matcher.group(4));
+			}
+			catch (Exception e) {}
+			request.getRequestDispatcher("/mob/more.jsp?categoryId=" + categoryId + "&subcategoryId=" + subcategoryId + "&pageIndex=" + pageIndex).forward(request, response);
 		}
 		else if ((matcher = _moreSubcategoryURLPattern.matcher(uri)).find())
 		{
@@ -83,6 +149,20 @@ public class RewriteFilter implements Filter
 			String categoryId = matcher.group(1);
 			String subcategoryId = matcher.group(2);
 			request.getRequestDispatcher("/more.jsp?categoryId=" + categoryId + "&subcategoryId=" + subcategoryId + "&pageIndex=1").forward(request, response);
+		}
+		else  if ((matcher = _viewCategoryURLPattern.matcher(uri)).find())
+			
+		{ 
+			String categoryId = "introduce";
+			int pageIndex = 1;
+			try
+			{
+				pageIndex = Integer.parseInt(matcher.group(1));
+			}
+			catch (Exception e) {}
+			request.getRequestDispatcher("/introduce/view.jsp?categoryId=" + categoryId + "&pageIndex=" + pageIndex).forward(request, response);
+		
+			
 		}
 		else
 		{

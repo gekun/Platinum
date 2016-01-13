@@ -11,6 +11,7 @@ import platinum.framework.web.rest.AbstractResource;
 import platinum.security.Membership;
 import platinum.security.MembershipUser;
 
+
 @Path("security")
 public class SecurityResource extends AbstractResource
 {
@@ -28,6 +29,37 @@ public class SecurityResource extends AbstractResource
 		else
 		{
 			return responseForbidden();
+		}
+	}
+	
+	@POST
+	@Path("password")
+	public Response changePassword(
+			@FormParam("loginPassword") String p_loginPassword,
+			@FormParam("newPassword") String p_newPassword
+			)
+	{
+		if (getSessionAttribute("pt.membership.currentUser") == null)
+		{
+			return responseWithException("密码修改失败，请重新登录。");
+		}
+		
+		String userName = ((MembershipUser)getSessionAttribute("pt.membership.currentUser")).getLoginName();
+		if (Membership.getInstance().validateUser(userName, p_loginPassword) != null)
+		{
+			try
+			{
+				Membership.getInstance().changeUserPassword(userName, p_newPassword);
+				return responseOK();
+			}
+			catch (Exception e)
+			{
+				return responseWithException(e.getMessage());
+			}
+		}
+		else
+		{
+			return responseWithException("原始密码输入错误。");
 		}
 	}
 	
@@ -66,6 +98,9 @@ public class SecurityResource extends AbstractResource
 		return responseForbidden();
 	}
 	
+	
+
+	
 	@POST
 	@Path("logoff")
 	public Response logoff()
@@ -76,6 +111,6 @@ public class SecurityResource extends AbstractResource
 			session.invalidate();
 		}
 		
-		return responseRedirectTo("/");
+		return responseRedirectTo("/admin/");
 	}
 }

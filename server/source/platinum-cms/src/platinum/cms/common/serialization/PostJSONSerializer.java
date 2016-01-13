@@ -6,6 +6,7 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
+import platinum.cms.common.entity.PostAttachmentEntity;
 import platinum.cms.common.entity.PostEntity;
 import platinum.cms.common.search.PostSearchResult;
 
@@ -29,6 +30,7 @@ public class PostJSONSerializer
 			json.put("summary", p_post.getSummary());
 			json.put("categoryId", p_post.getCategoryId());
 			json.put("subcategoryId", p_post.getSubcategoryId());
+			json.put("homeSubcategoryId", p_post.getHomeSubcategoryId());
 			json.put("photoURL", p_post.getPhotoURL());
 		}
 		catch (JSONException e)
@@ -73,11 +75,14 @@ public class PostJSONSerializer
 		try
 		{
 			json.put("contentText", p_post.getContentText());
-			json.put("postType", p_post.getPostType());
+			json.put("postType", p_post.getPostType().ordinal());
 			json.put("postStatus", p_post.getPostStatus().ordinal());
 			json.put("publisher", p_post.getPublisher());
 			json.put("source", p_post.getSource());
 			json.put("createTime", p_post.getCreateTime().getTime());
+			
+			List<PostAttachmentEntity> attachments = p_post.getAttachments();
+			json.put("attachments", AttachmentJSONSerializer.toSimpleArray(attachments));
 		}
 		catch (JSONException e)
 		{
@@ -91,6 +96,10 @@ public class PostJSONSerializer
 
 	public static JSONArray toSimpleArray(List<PostEntity> p_posts)
 	{
+		if (p_posts == null)
+		{
+			return null; 
+		}
 		JSONArray array = new JSONArray();
 		for (PostEntity post : p_posts)
 		{
@@ -101,6 +110,10 @@ public class PostJSONSerializer
 	
 	public static JSONArray toSimpleArray2(List<PostSearchResult> p_posts)
 	{
+		if (p_posts == null)
+		{
+			return null; 
+		}
 		JSONArray array = new JSONArray();
 		for (PostSearchResult post : p_posts)
 		{

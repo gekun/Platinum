@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+#header > #logo_pic{background-color:#CA0A3B;}
+#header > #link_search{background-color:#CA0A3B;}
+/*网页侧边栏*/
+#side
+{background-color: #CA0A3B;}
+
+#side #school_link #first
+{background-color: #9d042b;}
+
+/*网页右侧内容*/
+#r_content #menu #menu_ul
+{background-color: #CA0A3B;}
+#r_content #menu #menu_ul #nav{padding-left:50px;}
+#r_content #menu #menu_ul #nav li a:hover{color: #CA0A3B;}
+.previous b:hover, .next b:hover{color: #CA0A3B;}
+/*当前位置*/
+.CategoryNavigationBar a:hover{color:#CA0A3B;}
+/*postlist*/
+#postList{margin-left:20px; height:auto;}
+/*新闻和公共*/
+#r_content #am .title, #r_content #new .title, #r_content #job .title{color: #CA0A3B;}
+#r_content .detail .content_li{background-image:url(../images/YinYue_news_dt.png);}
+#r_content .detail li{background-image:url(../images/YinYue_news_dt.png);}
+#r_content .detail li a:hover{color: #CA0A3B;}
+#r_content .list_more a{color:#000;}
+#r_content .list_more a:hover{color: #CA0A3B;}
+/*页脚部分*/
+#bottom2{background-color: #CA0A3B;}
+#gallery .caption{
+	background-color: rgb(202,10,59);
+	background: rgba(202,10,59, 0.55);
+}

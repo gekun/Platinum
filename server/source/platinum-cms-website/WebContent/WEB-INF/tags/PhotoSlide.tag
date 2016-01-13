@@ -22,39 +22,51 @@ PostRuntimeManager manager = PostRuntimeManager.getInstance();
 List<PostEntity> posts = null;
 if (StringUtil.notNullOrEmpty(subcategoryId))
 {
-	posts = manager.loadLatestPostBySubcategory(subcategoryId, displayPhoto, where, count);
+	posts = manager.loadLatestPostsBySubcategory(subcategoryId, displayPhoto, where, count);
 }
 else if (StringUtil.notNullOrEmpty(categoryId))
 {
-	posts = manager.loadLatestPostByCategory(categoryId, displayPhoto, where, count);
+	posts = manager.loadLatestPostsByCategory(categoryId, displayPhoto, where, count);
 }
 %>
+
+<% int i=1; %>
 <ul id="${id}" class="PhotoSlide ${cssClass}">
 <% for (PostEntity post : posts) {%>
-<li>
-	<div class = "slide">
-    	<a href="<%= post.getLink()%>">
-      	  <% if (displayPhoto) {%>
-       	  <img src='<%= post.getPhotoURL()%>' />
-      	  <% } %>
-      	  <div class = "caption">
-      	  	<p class ="title"><%= post.getTitle()%></p>
-          </div>
-    	</a>
-    </div>
+<li id="post<%=i++ %>">
+	<div class="bx-caption"><span><%= post.getTitle()%></span></div>
+   	<a href="<%= post.getLink()%>">
+     	  <% if (displayPhoto) {%>
+      	  <img src='<%= post.getPhotoURL()%>'  height='250' />
+     	  <% } %>
+   	</a>
 </li>
 <% } %>
 </ul>
 
-<script type="text/javascript">
-								$(function () {
-									$('#home_slider').flexslider({
-										animation : 'slide',
-										controlNav : true,
-										directionNav : true,
-										animationLoop : true,
-										slideshow : false,
-										useCSS : false
-									});								
-								});
-							</script>
+<script>
+	$(document).ready(function(){
+		$('#tpxwMorelabel').css('opacity','0');
+	});
+	$('#tpxwMorelabel').hover(function(){$(this).css('opacity','0.8');},
+			function(){$(this).css('opacity','0');
+	});
+</script>
+
+<script src="static/common/scripts/lib/bxslider/jquery.bxslider.min.js" type="text/javascript"></script>
+<script src="static/common/scripts/lib/bxslider/jquery.bxslider.js" type="text/javascript"></script>
+<script src="static/common/scripts/lib/bxslider/select.js" type="text/javascript"></script>
+<link href="static/common/scripts/lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
+
+<script>
+	$(document).ready(function(){
+		  $('.bxslider').bxSlider({
+			  auto: true,
+			  controls: true,
+			  speed: 2000,
+			  useCSS: true,
+			  captions: true,
+			  mode: 'fade'});
+	});
+</script>
+

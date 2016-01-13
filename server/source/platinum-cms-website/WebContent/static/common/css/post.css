@@ -1,20 +1,33 @@
+a
+{
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover
+{
+	color: blue;
+}
+
+
 #postDetail
 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    min-height: 600px;
+	width: 692px;
+    min-height: 650px;
+    height: 100%;
+    padding-right: 10px;
 }
 
 #postDetail h1
 {
 	text-align: center;
+	font-size: 16px;
 }
 
 #info 
 {
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 #info a
@@ -30,26 +43,190 @@
 
 #summary
 {
-	border: 1px #ddd dashed;
-	padding-left: 20px;
-	padding-right: auto;
-	padding-bottom: 10px;
-	padding-top: 10px;
+	border: 1px #bbb dashed;
+	padding: 10px;
 	color: #3399cc;
-	font-size: 14px;
-	line-height: 16px;	
+	line-height: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 610px;	
 }
 
 #content
 {
-	font-size: 14px;
+	width: 650px;
+	padding: 10px 20px 20px 20px;
 }
 
 #content img
 {
-	margin-top: 10px;
-	margin-left: 40px;
+	margin:0 auto;
 	border: 1px solid #ddd;
 	-moz-box-shadow: gray 0px 3px 10px;
 	box-shadow: gray 0px 3px 10px;	
+}
+
+#imageContent
+{
+	width: 250px;
+	padding: 0;
+	margin: 30px 0 0 30px;
+	float: left;
+}
+
+#imageContent img
+{
+	height: 200px;
+	width: 250px;
+	border: 1px solid #ddd;
+	box-shadow: gray 0px 3px 10px;	
+	padding: 5px;
+}
+
+#textContent
+{
+	width: 650px;
+	margin:0 0 0 295px;
+	padding: 30px 0 0 0;
+}
+
+#attachmentList
+{
+	display: block;
+	padding: 10px 0 20px 20px;
+}
+
+#attachmentList li
+{
+	margin-bottom:5px;
+}
+
+#attachmentList a
+{
+	text-decoration: none;
+	color: #000;
+}
+
+#attachmentList a:hover
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+#attachmentList span{
+	font-size:16px;
+	color:green;
+}
+
+#MainBox
+{
+	position: relative;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	background: white;
+}
+
+#sideBar
+{
+	position: absolute;	
+	width: 260px;
+	right: 0;
+}
+
+#categoryNavigationBar
+{
+	padding: 10px 0 0 0;
+    margin: 0;
+    display: block;
+    list-style: none;
+    height: 22px;
+    line-height: 23px;
+	border-bottom: 1px #ddd solid;
+	width: 650px;
+	color: #000;
+	font-weight: bold;
+}
+
+.CategoryNavigationBar li
+{
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: left;
+}
+
+
+#categoryNavigationBar li:first-child
+{
+	margin-left: 10px;
+	color: #000;
+}
+
+#categoryNavigationBar li a 
+{
+	color: #000;
+	text-decoration: none;
+}
+
+#categoryNavigationBar li a:hover
+{
+	color: #ccc;
+}
+
+#title_style
+{
+	padding: 10px 0 0 0;
+	width: 260px;
+	height: 22px;
+	line-height: 22px;
+	border-bottom: 1px solid #ddd;
+}
+
+ul.TextList
+{
+	display: block;
+	margin: 10px 0 0 0px;
+    padding: 0;
+	list-style: none inside url(/static/common/images/square.gif);
+	
+}
+
+ul.TextList li
+{
+    line-height: 20px;
+    margin: 0 0 10px 0;
+    padding:0;     
+    width:100%; 
+    margin-left: 5px;
+    white-space:nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+ul.TextList li a
+{
+	text-decoration: none;
+	color: #000;
+}
+
+ul.TextList li a:hover
+{
+	color: #ccc;
+}
+
+ul.TextList li a > div
+{
+	display: inline;
+}
+
+#title_style a
+{
+	color: #999;
+	text-decoration: none;	
+}
+
+#title_style a:hover
+{
+	color: #ccc;
 }

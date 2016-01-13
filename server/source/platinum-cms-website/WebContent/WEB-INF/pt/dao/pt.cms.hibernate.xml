@@ -6,8 +6,12 @@
     <session-factory>
         <mapping class="platinum.cms.common.entity.PostContentEntity"/>
         <mapping class="platinum.cms.common.entity.PostViewsEntity"/>
+        <mapping class="platinum.cms.common.entity.PostAttachmentEntity"/>
         <mapping class="platinum.cms.common.entity.PostEntity"/>
         <mapping class="platinum.cms.common.entity.SubcategoryEntity"/>
         <mapping class="platinum.cms.common.entity.CategoryEntity"/>
+        <mapping class="platinum.cms.common.entity.CallBackEntity"/>
+        
+   
     </session-factory>
 </hibernate-configuration>

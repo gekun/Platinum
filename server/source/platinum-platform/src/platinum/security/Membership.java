@@ -1,6 +1,7 @@
 package platinum.security;
 
 import platinum.common.util.EncryptionUtil;
+import platinum.common.util.StringUtil;
 import platinum.framework.dao.DAOQuery;
 import platinum.security.dao.UserDAO;
 import platinum.security.entity.UserEntity;
@@ -44,10 +45,7 @@ public class Membership
 	
 	public String validateUser(String p_loginName, String p_loginPassword)
 	{
-		DAOQuery query = new DAOQuery("loginName=:loginName");
-		query.setParameter("loginName", p_loginName.toLowerCase());
-		query.setCachable(true);
-		UserEntity entity = getUserEntityDAO().selectFirst(query);
+		UserEntity entity = _getUserEntityByLoginName(p_loginName);
 		if (entity != null && entity.getLoginPass().equals(EncryptionUtil.encryptPassword(p_loginPassword)))
 		{
 			return entity.getId();
@@ -71,4 +69,42 @@ public class Membership
 			return null;
 		}
 	}
+	
+	public void changeUserPassword(String p_userName, String p_newPassword)
+	{
+		if (StringUtil.notNullOrEmpty(p_newPassword))
+		{
+			_checkPassword(p_newPassword);
+			UserEntity user = _getUserEntityByLoginName(p_userName);
+			getUserEntityDAO().beginTransaction();
+			user.setLoginPass(EncryptionUtil.encryptPassword(p_newPassword));
+			getUserEntityDAO().save(user);
+			getUserEntityDAO().commitTransaction();
+		}
+	}
+	
+	
+	private void _checkPassword(String p_newPassword)
+	{
+		if (p_newPassword.contains(" "))
+		{
+			throw new RuntimeException("密码中不能包含空格。");
+		}
+		else if (p_newPassword.contains("'"))
+		{
+			throw new RuntimeException("密码中不能包含“'”符号。");
+		}
+		else if (p_newPassword.length() < 5)
+		{
+			throw new RuntimeException("密码必须超过 5 个字符。");
+		}
+	}
+	private UserEntity _getUserEntityByLoginName(String p_userName)
+	{
+		DAOQuery query = new DAOQuery("loginName=:loginName");
+		query.setParameter("loginName", p_userName.toLowerCase());
+		UserEntity user = getUserEntityDAO().selectFirst(query);
+		return user;
+	}
+
 }

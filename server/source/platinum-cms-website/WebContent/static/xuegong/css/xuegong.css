@@ -1,0 +1,275 @@
+@CHARSET "UTF-8";
+
+
+#xgcontent
+{
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 990px;
+	height: 625px;	
+	position: relative;	
+}
+
+#xgcontent #mainContent
+{
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	width: 990px;
+	height: 625px;
+	left: 0;
+	top: 0;
+}
+
+#xgcontent #mainContent #browsable
+{
+	
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;	
+	border:4px solid #FFF;	
+	width: 410px;
+	height: 295px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 285px;
+	top: 10px;
+}
+
+#xgcontent #mainContent #textNews
+{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	width: 270px;
+	height: 300px;
+	border: 1px #bcd2c3 solid;
+	border-radius: 10px 0 0 10px;
+	-webkit-border-radius:10px 0 0 10px;
+    overflow: hidden;
+	background-color:#bcd2c3;
+}
+
+#xgcontent #mainContent #textNews ul
+{
+	margin:5px 0 0 0;
+	margin-left:10px;
+	padding:0;
+
+}
+
+#xgcontent #mainContent #textNews li
+{
+
+	margin: 8px 0 0 0;
+	width: 240px;
+	font-size: 13px;
+	color:#000000;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-left:15px;
+	background-image: url(/static/xuegong/images/list.png);
+	background-repeat: no-repeat;
+	padding-bottom:3px;
+	border-bottom:1px solid #ccc;
+}
+
+#xgcontent #mainContent #gongNews
+{
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 270px;
+	height: 300px;
+	border: 1px #bcd2c3 solid;
+	border-radius:0 10px 10px 0;
+	-webkit-border-radius:0 10px 10px 0;
+    overflow: hidden;
+	background-color:#bcd2c3;
+}
+
+#xgcontent #mainContent #informs
+{
+	width: 320px;
+	margin: 0;
+	padding :0;
+	height: 290px;
+	position: absolute;
+	top: 320px;
+	left: 335px;
+	border: 1px #bcd2c3 solid;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	overflow: hidden;
+	background-color:#bcd2c3;
+}
+
+#xgcontent #mainContent #teaching
+{
+	width: 320px;
+	height: 290px;
+	position: absolute;
+	border: 1px #bcd2c3 solid;
+	border-radius:10px 0 0 10px;
+	-webkit-border-radius:10px 0 0 10px;
+	overflow: hidden;
+	background-color:#bcd2c3; 
+	right: 0;
+	top: 320px;
+}
+#xgcontent #mainContent #email
+{
+	width: 320px;
+	height: 290px;
+	position: absolute;
+	left: 0;
+	top: 320px;
+	border: 1px #bcd2c3 solid;
+	border-radius:0 10px 10px 0;
+	-webkit-border-radius:0 10px 10px 0;
+	overflow: hidden;
+	background-color:#bcd2c3; 
+}
+
+#xgcontent #mainContent a
+{
+	color:#000000;
+	text-decoration: none;
+}
+
+#xgcontent #mainContent a:hover
+{
+	color:#88ccee;
+}
+
+#xgcontent #mainContent #gongNews ul
+{
+	margin:5px 0 0 0;
+	margin-left:10px;
+	padding:0;
+}
+
+#xgcontent #mainContent #gongNews li
+{
+	margin: 8px 0 0 0;
+	width: 240px;
+	color:#000000;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-left:15px;
+	background-image: url(/static/xuegong/images/list.png);
+	background-repeat: no-repeat;
+	padding-bottom:3px;
+	border-bottom:1px dashed #326c37;
+}
+
+#xgcontent #mainContent #informs ul
+{
+	margin:5px 0 0 0;
+	margin-left:10px;
+	padding:0;
+}
+
+#xgcontent #mainContent #informs li
+{
+	margin: 8px 0 0 0;
+	width: 280px;
+	color:#000000;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-left:15px;
+	background-image: url(/static/xuegong/images/list.png);
+	background-repeat: no-repeat;
+	padding-bottom:3px;
+	border-bottom:1px dashed #326c37;
+}
+
+#xgcontent #mainContent #teaching ul
+{
+	margin:10px 0 0 0;
+	margin-left:10px;
+	padding:0;
+}
+
+#xgcontent #mainContent #teaching li 
+{
+
+	margin: 10px 0 0 0;
+	width: 280px;
+	color:#000000;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-left:15px;
+	background-image: url(/static/xuegong/images/list.png);
+	background-repeat: no-repeat;
+	padding-bottom:3px;
+	border-bottom:1px dashed #326c37;
+}
+
+#xgcontent #mainContent #email ul
+{
+	margin:10px 0 0 0;
+	margin-left:10px;
+	padding:0;
+}
+
+#xgcontent #mainContent #email li 
+{
+
+	margin: 8px 0 0 0;
+	width: 280px;
+	color:#000000;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-left:15px;
+	background-image: url(/static/xuegong/images/list.png);
+	background-repeat: no-repeat;
+	padding-bottom:3px;
+	border-bottom:1px dashed #326c37;
+}
+
+#more
+{
+	padding: 0;
+	margin: 10px 30px 0 0;
+	width: 80px;
+	height: 20px;
+	float: right;
+}
+
+
+.PostList li a #title
+{
+	line-height:16px;
+	-o-text-overflow:ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.mainMore
+{
+	position:absolute;
+	top:6px;
+	right:0;
+	width:60px;
+	height:15px;
+}
+#textNews .mainMore{top:8px;}
+
+#xgcontent #mainContent .mainMore>a
+{
+	color:#727272;
+}
+#xgcontent #mainContent .mainMore a:hover
+{
+	color:#000;
+}

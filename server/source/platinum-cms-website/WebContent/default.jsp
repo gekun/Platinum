@@ -1,100 +1,132 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@page import="platinum.platform.web.HttpClientCache"%>
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="cms" tagdir="/WEB-INF/tags" %>
+  
+<%
+HttpClientCache clientCache = new HttpClientCache(request, response);
+clientCache.setMaxAge(60);
+request.setCharacterEncoding("utf-8");
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<cms:Meta/>
 <title>南京师范大学中北学院欢迎您</title>
-
-<link href = "/static/common/css/basic.css" rel = "stylesheet"></link>
-<link href = "/static/home/css/home.css" rel = "stylesheet"></link>
-<script src = "/static/common/scripts/lib/jquery.js" type = "text/javascript"></script>
-
-
-<!-- FlexSlider start -->
-<link rel="stylesheet" href="/static/home/plugins/flexslider/flexslider.css" type="text/css" />
-<script type="text/javascript" src="/static/home/plugins/flexslider/jquery.flexslider-min.js"></script>
-<!-- FlexSlider end -->
-
+<script type = "text/javascript" >
+function Tab()
+{
+    if(event.keyCode==13 && // 13表示Enter键
+       event.srcElement.type!="submit" )
+    {
+　    event.keyCode=9;      // 9表示Tab键
+    }
+}
+</script>
 </head>
-<body>
-
-    <cms:Header/>
-
-	
-	<!-- 正文内容 -->
-	<div id = "content">
-		<!-- left side -->
-		<div id = "left">
-			<!-- begin of block_home_slider -->
-			 <div class="block_home_slider">
-                    		<div id="home_slider" class="flexslider">
-                            	<cms:PhotoSlide id="tsztList" cssClass="slides" categoryId="news" displayPhoto="true" count="4" />
-                            </div>
-                            
-                            
-             </div>
-			<!-- end of block_home_slider-->
-					
-			<div id = "news">
-				<span><img src = "/static/home/images/news.png" alt = ""/></span>
-				<div id = "part1">
-					<cms:PostList id="xwdtList1" cssClass="PhotoList" subcategoryId="sc000000000000000000000000000006" displayPhoto="true" count="3" />
-				</div>
-				
-				<div id = "part2">
-					<cms:PostList id="xwdtList2" subcategoryId="sc000000000000000000000000000006" where="photoURL is null" count="6" />
-					<p id = "position_2"><a href = "/news/more/">更多...</a></p>
-				</div>
-			</div>
-			
-			<div id = "schoolnews">
-				<span><img src = "/static/home/images/schoolnews.png" alt = ""/></span>
-				<div id = "part1">
-					<cms:PostList id="xydtList1" cssClass="PhotoList" subcategoryId="sc000000000000000000000000000020" displayPhoto="true" count="3" />
-				</div>
-				
-				<div id = "part2">
-					<cms:PostList id="xydtList2" subcategoryId="sc000000000000000000000000000020" where="photoURL is null" count="6" />
-					<p id = "position_2"><a href = "/news/more/">更多...</a></p>
-				</div>				
-			</div>			
-		</div>
-		<!-- left end -->
-		
-		<div id = "right">
-			<div id = "topic">
-				<span id = "position_1"><img src = "/static/home/images/topic.gif" alt = ""/></span>
-				<p id = "position_2"><a href = "/news/more/">更多...</a></p>
-				
-				<div id = "right_part">
-					<cms:PostList id="ztbdList" cssClass="PhotoSummaryList" categoryId="news" displaySummary="true" displayPhoto="true" count="3" />
-				</div>				
-			</div>
-			
-			<div id = "inform">
-				<span id = "position_1"><img src = "static/home/images/inform.gif" alt = ""/></span>
-				<p id = "position_2"><a href = "/news/more/">更多...</a></p>
-				<div id = "part2" style = "width : 360px; margin-top: -10px;">
-					<cms:PostList id="tzggList" subcategoryId="sc000000000000000000000000000008" count="7" />
-				</div>				
-			</div> 
-			
-			<div id = "video">
-				<span id = "position_1"><img src = "/static/home/images/movie.gif" alt = ""/></span>
-				<p id = "position_2"><a href = "/news/more/">更多...</a></p>
-                <div id = "medium">
-                	<img src = "/static/home/images/movie.jpg" alt = ""/>
-                </div>
-			</div>
-		</div>
-		<!-- right end -->
-	</div>
-    
-    
+<body onload="onload()" onkeydown ="Tab()">
+	<cms:Header/>
+    <!--主页内容-->
+	<div id="floatDiv" class="zhaoshenglink" style="width:102px;height:270px;position:fixed;_position:absolute;z-index:10000;top:150px;left:45px;padding:1px;border:1px solid #FFF;background-color:#FFF;">
+    	<a style="margin-left:1px;display:block;width:100px;height:246px;background-image:url(/static/common/newimages/zzb.jpg);" href="/zhaosheng/ff8081814432efeb01449b94c27c0278.html" target="_blank"></a>
+    	<div class="linkClose">
+    		<div class="linkCloseButton">关闭</div>
+    	</div>
+    </div>
+    <div class="zhaoshenglink" style="width:102px;height:270px;position:fixed;_position:absolute;z-index:10000;top:150px;right:45px;padding:1px;border:1px solid #FFF;">
+    	<a style="margin-left:1px;display:block;width:100px;height:246px;background-image:url(/static/common/newimages/zzb.jpg);" href="/zhaosheng/ff8081814432efeb01449b94c27c0278.html" target="_blank"></a>
+		<div class="linkClose">
+    		<div class="linkCloseButton">关闭</div>
+    	</div>
+	</div> 
+	<script>
+	 	//$("#floatDiv").divFloat({ delay: 40,xPos:300,yPos:0,roll:false });  
+		$('.linkCloseButton').click(function(){
+			$('.zhaoshenglink').css({"display":"none"});
+		});
+	</script>
+    <div id="indexContent" class="container_16">
+    	<div class="grid_4" id="upLeft">
+        	<div id="search">
+        		<!--<div id="searchTitle">本站搜索</div>-->
+        		<div id="searchContent">
+        			<form id="searchForm" action="/search" method="get">
+						<div id="searchline"><input type="text" id="searchField" name="keyword" value="输入搜索关键字" onfocus="search(1,this);" onblur="search(2,this);"></div>
+						<input type="submit" id="searchBtn" value="搜">
+					</form>
+        		</div>
+        	</div>
+            <div id="jgHome">
+            	<div id="jgTitle">教工之家</div>
+            	<form target="_blank" accept-charset="GB2312" name="Login" action="http://zbvip.njnu.edu.cn/vip/Admin_ChkLogin.asp" method="post" target="_parent" onsubmit="document.charset='GB2312';">        
+            	<ul id="jgContent">
+            		<li class="jgList" style="margin-bottom:2px;">
+            			<div class="jgPic" style="background-image:url(/static/common/newimages/userpic.jpg);"></div>
+            			<div class="jgOut"><input name="UserName" type="text" class="jgInput"></div>
+            		</li>
+            		<li class="jgList" style="margin-bottom:2px;">
+            			<div class="jgPic" style="background-image:url(/static/common/newimages/pwpic.jpg);"></div>
+            			<div class="jgOut"><input name="Password" type="password" class="jgInput"></div>
+            		</li>
+            		<li class="jgList" style="height:34px;">
+            			<div id="yanzheng">验证码:</div>
+            			<div class="jgOut" style="width:93px;height:23px;float:left;margin-left:0;margin-top:3px;">
+            				<input name="CheckCode" style="width:91px;height:21px;"class="jgInput">
+            			</div>
+            		</li>
+            		<li class="jgList" style="height:35px;">
+            			<input name="Submit" id="jgSubmit" type="submit" value="" >
+ 						<img src="http://zbvip.njnu.edu.cn/vip/inc/code.asp" width="60" height="25" border="0" align="absmiddle" onclick="javascript:this.src='http://zbvip.njnu.edu.cn/vip/inc/code.asp?'+Math.random();">           		
+            		</li>
+            	</ul>
+            	</form>
+            </div>
+        </div>
+        <div class="grid_6" id="upMiddle">
+        	<cms:newPhotoSlide id="tpxwInner" cssClass="frame" subcategoryId="sc000000000000000000000000000006" displayPhoto="true" count="4" />	
+        </div>
+        <div class="grid_6" id="upRight">
+        	<div id="schoolTitle">
+        		<div id="schoolTitleLeft">新闻动态</div>
+        		<a id="schoolMore" href="/news/sc000000000000000000000000000006/more/">更多>></a>
+        	</div>
+        	<cms:newPostList id="text_school" subcategoryId="sc000000000000000000000000000006" count="10" />
+        </div>
+        <div class="grid_4" id="downLeft">
+        	<div id="tzggTitle">通知与公告</div>
+        	<cms:newPostList id="text_inform" subcategoryId="sc000000000000000000000000000008" where="photoURL is null"  count="8" />
+        	<a id="tzggMore" href="/news/sc000000000000000000000000000008/more/">更多>></a>
+        </div>
+        <div class="grid_6" id="downMiddle">
+        	<div id="xydtTitle"><span>校园动态</span></div>
+            <div id="xydtContent">
+            	<cms:newPostList id="xwTextContent" subcategoryId="sc000000000000000000000000000020"     count="9" />
+            	<div id="newsMore"><a href="/news/sc000000000000000000000000000020/more/">更多>></a></div>
+            </div>
+        </div>
+        <div class="grid_6" id="downRight">
+        	<div id="xyfc">
+        		<div id="xyfcTitle">
+        			<div id="xyfcTitleLeft">校园风采</div>
+        			<div class="clickInto"><a href="/introduce" target="_blank">点击进入</a></div>
+        		</div>       		
+        		<cms:fcaiPostList id="xyfcContent" subcategoryId="sc000000000000000000000000000003"  displayPhoto="true"  count="4" />        		
+        	</div>
+            <div id="cylj">
+            	<div id="cyljTitle">
+            		<div id="cyljTitleLeft">常用链接</div>
+        			<div class="clickInto"><a href="/service/ff8081813be18002013be18e03250002.html">点击进入</a></div>
+        		</div>
+        		<ul>
+        			<li><a class="cyljLeft" href="http://zbjw.njnu.edu.cn/">教务系统</a><a class="cyljLeft" href="/service/ff8081813d105c17013d10deb9cc0002.html">班车时刻</a><a class="cyljLeft" href="http://web.mobset.com/index.html">短信平台</a></li>
+        			<li><a class="cyljLeft" href="/service/ff8081813b6fee04013b6ff3a36c0017.html">办公电话</a><a class="cyljLeft" href="https://mail.njnu.edu.cn/">邮件在线</a><a class="cyljLeft" href="http://urp.njnu.edu.cn">师大内网</a></li>
+        		</ul>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container_16" style="height:15px; background-color:#FFF;"></div>-->
+    <!--主页内容结束-->
     <cms:Footer/>
-
 </body>
 </html>

@@ -1,5 +1,8 @@
 package platinum.cms.common.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,7 +11,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -21,6 +26,17 @@ import platinum.framework.entity.StandardEntity;
 @Table(name = "PTT_POST", schema = "PT_CMS")
 public class PostEntity extends StandardEntity
 {
+	private String _homeSubcategoryId = null;
+	@Column(name = "HOME_SUBCATEGORY_ID")
+	public String getHomeSubcategoryId()
+	{
+		return _homeSubcategoryId;
+	}
+	public void setHomeSubcategoryId(String value)
+	{
+		_homeSubcategoryId = value;
+	}
+	
 	private String _subcategoryId = null;
 	@Column(name = "SUBCATEGORY_ID")
 	public String getSubcategoryId()
@@ -185,5 +201,19 @@ public class PostEntity extends StandardEntity
 	public String getAbsoluteLink()
 	{
 		return URLResolver.getAbsolutePostlink(getId(), getCategoryId());
+	}
+	
+	
+	
+	private List<PostAttachmentEntity> _attachments = new ArrayList<PostAttachmentEntity>();
+	@OneToMany(mappedBy = "post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OrderBy("CREATE_TIME")
+	public List<PostAttachmentEntity> getAttachments()
+	{
+		return _attachments;
+	}
+	public void setAttachments(List<PostAttachmentEntity> value)
+	{
+		_attachments = value;
 	}
 }

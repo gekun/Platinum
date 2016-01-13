@@ -1,0 +1,56 @@
+@font-face{
+ font-family: '方正少儿简体';
+ src: url('方正少儿简体.ttf') format('truetype');
+}  
+body{width:1004px;height:1417px;margin:0 auto;}
+#all{width:100%;height:100%;background-image:url(../images/bg.jpg);background-repeat:repeat-x;background-color:#77D632;}
+.block{display:block;}
+.floatLeft{float:left;}
+#header{width:100%;height:182px;}
+#menu{width:780px;height:182px; background-image:url(../images/main_02.png);position:relative;}
+#menu ul{width:688px;height:30px;position:absolute;top:35px;right:0;}
+.menuEle{width:98px;height:30px;text-align:center;line-height:30px;}
+.menuEle a{font-family: '方正少儿简体';font-size:16px;color:#e8ff84;}
+.menuEle a:hover{color:#ffcb33;}
+/*当前页*/
+.menuActive a{color:#ffcb33;}
+#indexContent{width:100%;height:1139px;}
+#album{width:100%;height:414px;}
+#albumLeft{width:224px;height:414px;background-image:url(../images/main_03down.png);}
+#albumRight{width:780px;height:414px;background-image:url(../images/xiangkuang.png); background-repeat:no-repeat;position:relative;}
+#albumInner{width:647px;height:314px;position:absolute;top:38px;left:57px; background-image:url(../images/album.jpg);position:relative;}
+#yezi{width:100%;height:25px;position:absolute;bottom:0; background-image:url(../images/yezi.png);}
+#columns{width:100%;height:725px;}
+#columnsLeft{width:224px;height:100%;}
+#columnsRight{width:749px;height:725px;background-image:url(../images/main_08.png); position:relative;}
+#columnsLeftUp{width:100%;height:370px;background-image:url(../images/main_06.png);position:relative;}
+#weather{position:absolute;top:60px;right:25px;}
+#columnsLeftDown{width:100%;height:252px;margin-top:10px;background-image:url(../images/main_10.png);position:relative;}
+#columnsLeftDown #countDown{position:absolute;top:45px;left:35px;width:155px;height:170px;}
+#countDown{font-family:华文楷体;font-size:25px;font-weight:bold;}
+#classDeclare{position:absolute;top:110px;left:80px; text-indent:32px;width:392px; font-family:'方正少儿简体';font-size:20px;line-height:32px;color:#35B123;text-align: justify;}
+#banjixinwen{position:absolute;left:70px;top:355px;width:350px;height:290px;}
+#banjixinwen_more{position:absolute;left:347px;top:312px;width:55px;height:20px;line-height:20px;text-align:center;}
+#banjixinwen_more a{color:#1b3110;font-size:16px;font-family:微软雅黑;font-weight:bold;}
+#tongzhi{position:absolute;left:445px;top:355px;width:240px;height:290px;}
+#tongzhi_more{position:absolute;left:623px;top:312px;width:55px;height:20px;line-height:20px;text-align:center;}
+#tongzhi_more a{color:#1b3110;font-size:16px;font-family:微软雅黑;font-weight:bold;}
+#classXinwen{width:100%;height:100%;}
+#classXinwen li{width:350px;height:36px;}
+#classXinwen li a{display: block;width: 330px;height: 30px;float: left;margin-top: 6px;margin-left: 7px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+#classXinwen li a #title {display: inline;}
+#classXinwen li a #title:hover{color:#35b123;}
+.listIcon {width: 7px;height: 7px;background-image: url(/static/common/newimages/blackdot.png);float: left;margin-top: 12px;margin-left: 3px;background-repeat: no-repeat;}
+#tongzhiGonggao{width:100%;height:100%;}
+#tongzhiGonggao li{width:100%;height:30px;}
+#tongzhiGonggao li a{display: block;width: 223px;height: 30px;float: left;margin-top: 6px;margin-left: 7px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+#tongzhiGonggao li a #title {display: inline;}
+#tongzhiGonggao li a #title:hover{color:#35b123;}
+
+
+#footer{width:100%;height:94px;bottom:0;background-image:url(../images/footer.jpg);position:relative;}
+#footer p{position:absolute;top:48px;right:200px;font-size:16px;font-family:'方正少儿简体';color:#333;}
+#viewCount span{display:none;}
+
+/*more*/
+#postList li{width:620px;list-style-position:outside;margin-left:5px;}

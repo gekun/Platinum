@@ -1,0 +1,592 @@
+@charset "utf-8";
+/* CSS Document */
+
+html
+{
+	padding: 0;
+	margin: 0;	
+	overflow-x: hidden;
+	overflow-y:auto; 	
+}
+body
+{
+	padding: 0;
+	margin: 0;	
+	overflow-y:hidden;
+}
+img{
+	border:0;
+}
+#mainContent ul li
+{
+	margin:0 5px 5px 0;
+	border-bottom: 1px dashed #aaa;
+	list-style:square inside url('/static/common/images/list.png');
+}
+#headcontainer
+{
+	padding: 0;
+	margin: 0;
+	padding-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 140px;
+	width: 990px;
+	background: #009bcb;
+	box-shadow: gray 0px 1px 20px;
+}
+
+#headcontainer #header1
+{
+	margin-left: auto;
+	margin-right: auto;
+	height: 100px;
+	width: 990px;
+	left: 0;
+	position: relative;
+}
+
+#header1 #indexAndsearch
+{
+	position: absolute;
+	margin-top: 15px;
+	height: 60px;
+	width: 200px;
+	right: 0;
+}
+
+
+#header1 #indexAndsearch a
+{
+	color:#ffffff;
+	text-decoration: none;
+	margin-left:9px;
+	margin-right:9px;
+}
+
+#header1 #indexAndsearch a:hover
+{
+	color: #ccc;
+}
+
+#header1 #indexAndsearch #searchbar
+{
+	width: 220px;
+	height: 22px;
+	margin-top: 5px;
+	background: url(/static/jiuye/images/searchbar.png);
+	background-repeat: no-repeat;
+}
+
+#header1 #collegelogo
+{
+	position: absolute;
+	left: 0;
+	top: 10px;
+}
+
+#header1 #secondlogo
+{
+	position: absolute;
+	left: 520px;
+	top: 10px;
+}
+
+.word {
+	width:120px;
+	height: 16px;
+	line-height: 16px;
+	padding: 0;
+	margin: 0;
+	float: left;
+	border: 0;
+	background-color: #FFFFFF;
+	color: #888787;
+	font-size: 10px;
+}
+
+.button {
+	float: left;
+	height: 22px;
+	width: 26px;
+    background: url(/static/jiuye/images/searchButton.png);
+	background-repeat: no-repeat;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+menu#mainmenu
+{ 
+	display: block;
+	width: 900px;
+	height: 32px;
+	list-style: none;
+	padding: 0;
+	margin: 5px 0 0 0;
+	margin-left: auto;
+	margin-right: auto; 
+	border-bottom: 1px #fff solid;   
+}
+
+.singleMenu
+{
+	float: left;
+	font-size: 16px;
+	font-family: 黑体;
+	display: inline-block;
+	height: 32px;
+	width: 128.5px;;
+	padding: 0;
+	margin: 0 ;
+}
+
+.singleMenu:hover
+{
+	border-radius:5px 5px 0 0;
+	background-color:#c8e2ea;
+}
+
+menu#mainmenu li a
+{
+	font-size:14px;
+}
+
+a{
+	text-decoration: none;
+}
+menu#mainmenu li a
+{
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	color: #fff;	
+	text-align: center;
+	list-style: none;
+	font-size:15px;
+	font-size:微软雅黑;
+}
+
+
+menu#mainmenu li a:hover
+{
+	color: #009bcb;
+	font-size:16px;
+}
+
+
+#footer
+{
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	height: 51px;
+	width: 990px;
+	background: #009bcb;
+	line-height: 23px;
+	font-size: 12px;
+	text-align:center;
+	position:relative;
+	text-decoration: none;
+	box-shadow: gray 0px 1px 20px;
+}
+
+ #bottom1{
+	width: 990px;
+	height: 120px;
+	position: absolute;
+	left:0;
+	
+}
+
+#fastlink1, #fastlink2
+{
+	display: inline-block;
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	margin: 10px 0 0 50px;
+	text-decoration: none;
+}
+
+#fastlink1
+{
+	border-right: 1px solid #fff;
+	width:450px;
+	position: absolute;
+	left:0;
+}
+
+#fastlink2
+{
+	width:450px;
+	position: absolute;
+	right:0;
+}
+	
+.fastLink a
+{
+	font: 宋体;
+	font-size:12px;
+	font-weight: normal;
+	color: #FFF;
+}
+
+table td
+{
+	width:140px;
+	height: 20px;
+	text-decoration: none;
+	padding: 0;
+}
+
+.fastLink table td a
+{text-decoration: none;}
+
+.fastLink table td a:hover
+{
+	color: #00fbcb;
+}
+
+#bottom2
+{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	width: 990px;
+	height: 50px;
+	bottom: 0;
+	color: #fff;
+	left: 0;
+}
+
+
+#bottom2 p
+{
+	padding: 0;
+	margin: 0;
+	line-height: 15px;
+	float: left;
+	clear: both;
+}
+
+#bottom2 span a
+{
+	color: #009bcb;
+	text-decoration: none;
+}
+#bottom2 #copyright
+{
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	padding: 0;
+	height: 50px;
+}
+
+#copyright span
+{
+	float: left;
+}
+
+#bottom2 span a:hover
+{
+	color: #00fbcb;
+}
+
+#bottom2 #website
+{
+	position: absolute;
+	left: 400px;
+	top: 7px;
+	text-align: center;
+}
+
+#website a
+{
+	display: block;
+	text-decoration: none;
+	padding: 5px 0 4px 80px; 
+	color: #fff;
+}
+
+#website a:hover
+{
+	color: #00fbcb;
+}
+
+
+#bottom2 #developer
+{
+	position: absolute;
+	right: 0;
+	width: 190px; 
+	margin: 0; 
+	padding: 0; 
+	display: bolck;
+	text-align: left;
+	color: #fff;
+}
+
+#developer ul
+{
+	margin: 10px 0 0 0;
+	padding: 0;	
+	float: left;
+}
+
+#developer li
+{
+	display: block;
+	height: 20px;
+	line-height: 12px;
+}
+
+#developer a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#developer a:hover
+{
+	color: #00fbcb;
+}
+
+#developer span
+{
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+#more
+{
+	width:670px;
+	height: 100%;
+	min-height: 630px;
+	margin-left: 0;
+	padding-right: 10px;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+#more .PostList li
+{
+	position:relative;
+	padding-left:5px;
+	width:95%;
+	height:25px;
+	line-height: 30px;
+	background-image:url(/static/jiuye/images/list.png);
+	background-repeat:no-repeat;
+	list-style-image:none;
+}
+
+#more .PostList li a
+{
+	position:absolute;
+	top:0;
+	left:20px;
+	margin:0;
+	padding:0;
+	display:block;
+	overflow:hidden;
+	width:555px;
+	height:30px;
+	color:#000;
+}
+
+#more .PostList li a:hover
+{
+	color:#999;
+}
+
+#postList{
+	list-style:none;
+	width:100%;
+	border-right: none;
+}
+
+#home_slider {
+	width: 350px;
+	height: 265px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#tsztList {
+	width: 350px;
+	height: 265px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+
+#tsztList img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border:0;
+	top: 0;
+	left: 0;
+}
+
+#bodyContent {
+	position: relative;
+	width: 990px;
+	margin-left: auto;
+	margin-right: auto;
+	background: white;
+	box-shadow: gray 0px 1px 20px;
+}
+
+#categoryNavigationBar {
+	width: 670px;
+}
+
+ul.TextList li
+{
+	list-style-position:outside;
+	margin-left:0;
+	border-bottom:1px solid #ccc;
+}
+
+#title_style strong
+{
+	padding:5px;
+}
+
+#sideBar
+{
+	right:0px;
+	padding-right:10px;
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+
+#categoryNavigationBar
+{
+	width:690px;
+}
+
+#content {
+	margin: 0 auto;
+	line-height: 20px;
+	width: 640px;
+	border: 1px dashed #BBB;
+	border-top: 1px dotted #BBB;
+	padding:0 5px 0 5px;
+}
+
+#postDetail h1
+{
+	padding:0 10px 0 10px;
+	line-height:20px;
+}
+
+#content .MsoNormal{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+
+#content>div{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	/*text-indent: 2em;*/
+}
+
+#content{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height: 150%; 
+	font-family: 宋体;
+	font-size: 12pt; 
+	padding:0 10px;
+	/*text-indent: 2em;*/
+}
+#content table{text-indent: 0;display:block;max-width:650px;}
+#content table tr{max-width:650px;display:block;}
+#content table div{text-indent: 0;}
+
+/*就业链接*/
+#jiuyeLink{
+	border-top:1px solid #009bcb;
+	border-bottom:1px solid #009bcb;
+	width:980px;
+	padding-left:10px;
+	height:130px;
+	background-image:url(/static/jiuye/images/c_bk.png);
+}
+.jiuyeLink{
+	float:left;
+	margin-left:5px;
+	margin-top:7px;
+	border:1px solid #CCC;
+	display:block;
+	height:50px;
+}
+/*END*/
+
+/*就业联盟版块*/
+#union{
+	position:absolute;
+	top:300px;
+	right:10px;
+}
+
+/*End*/
+
+/*侧边栏*/
+#cebian{
+	position:absolute;
+	z-index:1000;
+	top:150px;
+	left:0;
+}
+#cebianTitle{
+	margin-top:100px;
+	width:23px;
+	height:92px;
+	background-color:#009bcb;
+	border-radius:0 10px 10px 0;
+	cursor:pointer;
+	font-size:16px;
+	line-height:19px;
+	color:#FFF;
+	font-family:微软雅黑;
+	padding:13px 0 0 3px;
+	display:block;
+}
+#cebianContent{
+	width: 0;
+	height: 135px;
+	background-color: #009bcb;
+	border-radius: 0 15px 15px 0;
+	display: none;
+	color: #FFF;
+	padding: 2px;
+	margin-top: 85px;
+}
+
+#shengwei{ width:280px; height:10px; }
+
+.cebian{ margin-top:2px; width:300px; height:20px; font-size:14px;padding-left:5px;}
+
+#cebianshang{margin-top:2px; width:290px; height:25px; font-size:16px;color:#FFF;font-weight:bold; text-align:center;padding-left:5px;}
+
+/*END*/

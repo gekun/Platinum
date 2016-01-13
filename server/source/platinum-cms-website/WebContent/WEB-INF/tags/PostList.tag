@@ -53,45 +53,76 @@ PostRuntimeManager manager = PostRuntimeManager.getInstance();
 List<PostEntity> posts = null;
 if (StringUtil.notNullOrEmpty(subcategoryId))
 {
-    if (pageSize == 0)
+    if (subcategoryId.equals("rank"))
     {
-	    posts = manager.loadLatestPostBySubcategory(subcategoryId, displayPhoto, where, count);
+        if (pageSize > 0 || displayPageNavigationBar)
+        {
+            throw new RuntimeException("在“排行榜”模式下不允许使用分页。");
+        }
+        if (displayPhoto)
+        {
+        	throw new RuntimeException("在“排行榜”模式下不允许指定 displayPhoto 参数为 true。");
+        }
+        if (StringUtil.notNullOrEmpty(where))
+        {
+        	throw new RuntimeException("在“排行榜”模式下不允许指定 where 参数。");
+        }
+        
+        if (count == 0 || count == Integer.MAX_VALUE)
+        {
+            count = 10;
+        }
+        if (StringUtil.isNullOrEmpty(categoryId))
+        {
+        	categoryId = "news";
+        }
+        posts = manager.loadTopPostsByCategory(categoryId, count);
+    }
+    else if (pageSize == 0)
+    {
+	    posts = manager.loadLatestPostsBySubcategory(subcategoryId, displayPhoto, where, count);
     }
     else
     {
-        posts = manager.loadLatestPostBySubcategory(subcategoryId, displayPhoto, where, pageIndex, pageSize);  
+        posts = manager.loadLatestPostsBySubcategory(subcategoryId, displayPhoto, where, pageIndex, pageSize);  
     }
 }
 else if (StringUtil.notNullOrEmpty(categoryId))
 {
     if (pageSize == 0)
     {
-	    posts = manager.loadLatestPostByCategory(categoryId, displayPhoto, where, count);
+	    posts = manager.loadLatestPostsByCategory(categoryId, displayPhoto, where, count);
     }
     else
     {
-        posts = manager.loadLatestPostByCategory(categoryId, displayPhoto, where, pageIndex, pageSize);
+        posts = manager.loadLatestPostsByCategory(categoryId, displayPhoto, where, pageIndex, pageSize);
     }
 }
 %>
 <ul id="${id}" class="PostList ${cssClass}">
 <% for (PostEntity post : posts) {%>
-<li class = "current">
-    <a href="<%= post.getLink()%>" <%= openInNewWindow ? "target='_blank'" : ""%> >
+<li id="<%= post.getId()%>">
+    <a href="<%= post.getLink()%>" <%= openInNewWindow ? "target='_blank'" : ""%> title="<%= post.getTitle()%><%="\n更新时间："+DateUtil.formatDate(post.getUpdateTime(), "yyyy年M月d日") %>" >
         <% if (displayPhoto) {%>
         <img src='<%= post.getPhotoURL()%>' />
         <% } %>
-        <span id="title"><%= post.getTitle()%></span>
+        <div id="title"><%= post.getTitle()%></div>
         <% if (displaySummary != null && displaySummary) {%>
-        <span id="summary"><%= post.getSummary()%></span>
+        <div id="summary"><%= post.getSummary()%></div>
         <% } %>
     </a>
     <%if (displayDate) {%>
-    <span id="date" style = "float: right;">[<%= DateUtil.formatDate(post.getCreateTime(), "yyyy年M月d日") %>]</span>
+    <span id="date">[<%= DateUtil.formatDate(post.getCreateTime(), "yyyy年M月d日") %>]</span>
     <%} %>
 </li>
 <% } %>
+</ul>
 <% if (displayPageNavigationBar) {%>
 <cms:PageNavigationBar id="pageNavigationBar" pageIndex="<%= pageIndex%>" pageSize="<%= pageSize%>" displayNextButton="<%= posts.size() == pageSize%>"/>
 <% }%>
-</ul>
+
+<script>
+if($('#side').length > 0) 
+	$('#more').css('min-height','480px');
+	$('#more .PostList').css('min-height','430px');
+</script>
